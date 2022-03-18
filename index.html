@@ -4,9 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>Fibonacci</title>
 </head>
 <body>
-  
-  <script src="main.js"></script>
+<h1 class="centrado">Generador de números de Fibonacci</h1>
+<br>
+<br>
+<br>
+<br>
+<h2 class="descripcion">SUCECIÓN DE FIBONACCI</h2>
+<h3 class="descripcion">La sucesión comienza con los números 0 y 1, a partir de estos, «cada término es la suma de los dos anteriores», es la relación de recurrencia que la define  (Fuente: Wikipedia)"</h3>
+<section id="formFibo">
+  <form id="formulario">
+      <label class="labelForm" for="limite">Indique ultimo número: </label>
+      <br>
+      <input type="text" id="limite" class="cajitaTexto">
+      <br>
+      <br>
+      <br>
+      <input type="button" id="enviar" value="Enviar">
+  </form>
+  <br>
+  <br>
+  <br>
+  <h2 class="formatoCajaCantidad" id="cantidad"> </h2>
+  <br>
+  <br>
+  <h2 id="resultado"> </h2>
+</section>
+  <script src="JS/main.js"></script>
+</body>
 </html>

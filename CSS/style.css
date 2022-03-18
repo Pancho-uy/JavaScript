@@ -1,0 +1,70 @@
+/* Fuente del proyecto: IBM Plex Mono */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+/* Reseteo margenes y padding (elimino borde blanco del browser) */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body 
+{
+  width: 100vh;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.centrado
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descripcion
+{
+  margin-left: 10vh;
+}
+
+#formfibo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgreen;
+  border-radius: 5px;
+  width: 40vw;
+  height: 20vh;
+  font-weight: bold;
+  font-size: large;
+  
+}
+
+#formulario
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5vw;
+  padding: 2vh;
+  height: 100%;
+  background-color: lightgreen;
+}
+
+.cajitaTexto {
+border-radius: 5px;
+height: 25px;
+}
+
+
+.formatoCajaCantidad
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5vw;
+  padding: 2vh;
+  height: 100%;
+  background-color: lightgreen; 
+}

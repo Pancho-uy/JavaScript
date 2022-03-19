@@ -1,24 +1,30 @@
 /* Fuente del proyecto: IBM Plex Mono */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&display=swap');
 
 /* Reseteo margenes y padding (elimino borde blanco del browser) */
-* {
+
+*
+{
   margin: 0;
   padding: 0;
 }
 
-body 
+body
 {
-  width: 100vh;
-  font-family: 'Barlow Condensed', sans-serif;
+  width: 100vm;
+  height: 100vh;
+  align-items: center;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
-.centrado
+p{  font-family: 'IBM Plex Mono', monospace;}
+
+.tituloCentrado
 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align:center;
+  padding:8px;
+  text-align: center;
 }
 
 .descripcion
@@ -26,45 +32,67 @@ body
   margin-left: 10vh;
 }
 
-#formfibo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: lightgreen;
+/* grid principal */
+
+.gridPrincipal
+{
+  display:grid;
+  grid-template-columns: 33%, auto ;
+  grid-template-rows: 20%, 20%,60%;
+  grid-template-areas:
+  "col-izquierda" "form-fibo" "col-derecha"
+  "cantidad" "resultado" "resultado";
+  grid-row-gap: 2%;
+}
+
+.colIzq
+{
+  grid-area: col-izquierda;
+  float:left;
+  width:33%;
+}
+
+.colDer
+{
+  grid-area: col-derecha;
+  width:33%;
+  float:right;
+}
+
+.formFibo
+{
   border-radius: 5px;
-  width: 40vw;
-  height: 20vh;
-  font-weight: bold;
-  font-size: large;
-  
+  margin-left: 10vh;
+  width: 40%;
+  height: 20%;
+
 }
 
 #formulario
 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 5vw;
+  grid-area: form-fibo;
   padding: 2vh;
-  height: 100%;
-  background-color: lightgreen;
+  width:70%;
+  color: white;
+  background-color: black;
 }
 
-.cajitaTexto {
-border-radius: 5px;
-height: 25px;
+.cajitaTexto 
+{
+  border-radius: 5px;
+  height: 25px;
 }
-
 
 .formatoCajaCantidad
 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 5vw;
-  padding: 2vh;
-  height: 100%;
-  background-color: lightgreen; 
+  grid-area: cantidad;
+  color: white;
+  background-color: black;
+}
+
+.formatoCajaResultado
+{
+  grid-area: resultado;
+  color: white;
+  background-color: black;
 }

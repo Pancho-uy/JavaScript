@@ -1,6 +1,6 @@
 // Entrega desafío complementario JS
 
-// Inicio variables
+// 
 //
 document.getElementById("enviar").addEventListener("click", function ()
 {
@@ -17,7 +17,7 @@ document.getElementById("enviar").addEventListener("click", function ()
 
   if (!isNaN(ultimo))
   {
-    do
+    while (fibo<ultimo)
     {
       anterior=(fibo-segundo);
       primero=fibo;
@@ -26,9 +26,9 @@ document.getElementById("enviar").addEventListener("click", function ()
       msg=(msg+", "+new Intl.NumberFormat('de-DE').format(fibo));
       contador++;
     }
-    while (fibo<ultimo);
-    document.getElementById("cantidad").innerHTML = "La suceción generada tiene "+contador+" números de Fibonacci.";
-    document.getElementById("resultado").innerHTML = "0, 1"+msg;
+    ;
+    document.getElementById("laCantidad").innerHTML = "La suceción generada tiene "+contador+" números de Fibonacci.";
+    document.getElementById("elResultado").innerHTML = "0, 1"+msg;
   }
   else
   {
@@ -36,4 +36,7 @@ document.getElementById("enviar").addEventListener("click", function ()
   }
 
 })
+
+
+document.getElementById("resetear").addEventListener("click", function () {location.reload()})
 // Fin del código.

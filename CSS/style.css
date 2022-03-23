@@ -40,7 +40,7 @@ p{  font-family: 'IBM Plex Mono', monospace;}
   grid-template-columns: 33%, auto ;
   grid-template-rows: 20%, 20%,60%;
   grid-template-areas:
-  "col-izquierda" "form-fibo" "col-derecha"
+  "col-izquierda" "form-pdf" "col-derecha"
   "cantidad" "resultado" "resultado";
   grid-row-gap: 2%;
 }
@@ -59,7 +59,7 @@ p{  font-family: 'IBM Plex Mono', monospace;}
   float:right;
 }
 
-.formFibo
+.formPDF
 {
   border-radius: 5px;
   margin-left: 10vh;
@@ -70,9 +70,9 @@ p{  font-family: 'IBM Plex Mono', monospace;}
 
 #formulario
 {
-  grid-area: form-fibo;
+  grid-area: form-pdf;
   padding: 2vh;
-  width:70%;
+  width:20%;
   color: white;
   background-color: black;
 }

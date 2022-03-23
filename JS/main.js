@@ -1,42 +1,57 @@
 // Entrega desafío complementario JS
-
-// 
 //
-document.getElementById("enviar").addEventListener("click", function ()
-{
-  let contador, primero, segundo, ultimo, fibo;
-  let msg="";
-
-  // Genero números de Fibonacci en base al ingresado por el usuario
+//
+  let salir=false;
+  let descripcion=pedido=lineaFactura="";
+  let cantidad=costo=costoFlete=subtotal=0;
+  let iva=22;
+  let flete=0;
   //
-  ultimo=parseInt(document.getElementById("limite").value);
-  primero=0
-  segundo=1;
-  fibo=primero+segundo;
-  contador=2;
-
-  if (!isNaN(ultimo))
+  // cuento paginas por tamaño
+  //
+  while (!salir)
   {
-    while (fibo<ultimo)
+    lineaFactura = parseInt(prompt("¿Qué Servicio desea comprar?:\n 1: Impresión B/N A4 (UYU 5 por carilla)\n 2:Impresión Color A4 (UYU 25 por carilla)\n 3:Ploteo papel (UYU 175 el metro)\n 4:Encuadernados A4 rulo plástico.(UYU 190)\n\n\n5: Salir"));
+
+    switch(lineaFactura)
     {
-      anterior=(fibo-segundo);
-      primero=fibo;
-      segundo=anterior;
-      fibo=(primero+segundo);
-      msg=(msg+", "+new Intl.NumberFormat('de-DE').format(fibo));
-      contador++;
+      case 1:
+        descripcion="Impresión B/N A4";
+        unidad="carillas";
+        precio=5;
+        break;
+      case 2:
+        descripcion="Impresión Color A4";
+        unidad="carillas";
+        precio=25;
+        break;
+      case 3:
+        descripcion="Ploteo papel";
+        unidad="metros";
+        precio=175;
+        break;
+      case 4:
+        descripcion="Encuadernados A4 rulo plástico";
+        unidad="unidades"
+        precio=190;
+        break;
+      case 5:
+        salir=true;
+        break;
     }
-    ;
-    document.getElementById("laCantidad").innerHTML = "La suceción generada tiene "+contador+" números de Fibonacci.";
-    document.getElementById("elResultado").innerHTML = "0, 1"+msg;
+    if (!salir && (lineaFactura>0 && lineaFactura <6))
+    {
+      cantidad=parseInt(prompt("Ingrese cantidad a comprar ("+unidad+") "));
+      costo=(precio*cantidad);
+      pedido=pedido+"- "+descripcion+" "+cantidad+" "+unidad+" UYU "+new Intl.NumberFormat('de-DE').format(costo)+"\n";
+      subtotal=subtotal+costo;
+    }
   }
-  else
-  {
-    alert("No se generaron números, suceción vacía");
-  }
-
-})
+  subtotal=subtotal;
+  ivafact=subtotal*(iva/100);
+  total=subtotal+ivafact;
+alert("ORDEN DE COMPRA \n\n"+pedido+"\n\n"+"Neto: UYU "+new Intl.NumberFormat('de-DE').format(subtotal)+"\nI.V.A. UYU "+new Intl.NumberFormat('de-DE').format(ivafact)+"\nTOTAL: UYU "+new Intl.NumberFormat('de-DE').format(total));
 
 
-document.getElementById("resetear").addEventListener("click", function () {location.reload()})
-// Fin del código.
+
+// Fin del código. 
